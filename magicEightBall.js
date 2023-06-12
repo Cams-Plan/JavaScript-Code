@@ -33,3 +33,6 @@ switch(eightBall) {
   default : console.log('The Magic Eight Ball says: \"You\'re out of luck\"');
   break;
   }
+
+// EXTRA PRACTICE
+// If you started with a switch statement, convert it to if/else if/else statements.
