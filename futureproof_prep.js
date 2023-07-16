@@ -110,6 +110,10 @@ console.log(swapcase("sergI")) // "SERGi"
 
 /* PROBLEM 7 */
 
+/* PROBLEM 8*/
+
+/* PROBLEM 9 */
+
 /* PROBLEM 11 */
 
 // complete the sum function that takes in an array
@@ -127,6 +131,22 @@ const sum = (arr) => {
 ar = [7, 19, 33, -5, -99, 6, 12]
 console.log(sum(ar)) //=> -27
 
-/* PROBLEM 8*/
+/* PROBLEM 12 */
 
-/* PROBLEM 9 */
+// complete the avg function that takes in an array
+// and returns (not console.log) the average (2 rounded digits)
+
+// Complete the function below
+const avg = (arr) => {
+  let counter = 0
+  let result = 0
+  for (let num of arr){
+    result += num;
+    counter ++;
+  }
+  // use toFixed(2) to bring to 2dp and parseFloat to ensure it is reverted from a string
+  return parseFloat((result / counter).toFixed(2))
+}
+
+ar = [7, 19, 33, -5, -99, 6, 12]
+console.log(avg(ar)) // => -3.86 (number)
