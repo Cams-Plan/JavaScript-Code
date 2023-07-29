@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Events: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+    <canvas width="480" height="320" tabindex="0">
+
+    </canvas>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.arc(x, y, size, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    let x = 50;
+    let y = 50;
+    const size = 30;
+
+    drawCircle(x, y, size);
+
+    // Add your code here
+
+    function moveCircle(event) {
+        kD = event.key
+        if (kD == "w"){
+            if (y > 0) {
+                y-= 3;
+            }
+        } else if (kD == "a"){
+            if (x > 0) {
+                x-= 3;
+            }
+        } else if (kD == "s") {
+            if (y < 320) {
+                y+= 3;
+            }
+        } else if (kD == "d") {
+            if (x < 480) {
+                x+= 3;
+            }
+        };
+
+        drawCircle(x, y, size)
+    };
+
+    canvas.addEventListener("keypress", e => {
+        moveCircle(e)
+    })
+
+  </script>
+  </body>
+  
+</html>
